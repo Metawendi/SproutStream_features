@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wendi Wang; A01345480">
+    <title>SproutStream</title>
+</head>
+<body>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        *{
+            margin: 0 auto;
+            font-size: 1rem;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 1rem;
+        }
+        button{
+            cursor: pointer;
+            transition: .2s;
+        }
+        button:hover {
+            background: black;
+            color: white;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            background: white;
+        }
+        header,main,footer{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             flex-wrap: nowrap;
+             width: 100%;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin: 2vh 10vw;
+            width: 100%;
+            padding: 2rem 0;
+        }
+        .header h1, .header h2, .header h3, .header p{
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255,255,255, 0.6);
+            width: 100%;
+            text-align: center;
+        }
+        .header-column1,.header-column2{
+            display: flex;
+            flex-direction: column;
+        }
+        .header-column2 {
+            background-image: url('/assets/AdobeStock_415790935.jpeg');
+            background-size: cover;
+            background-repeat: repeat;
+            padding: 4rem 0;
+        }
+        .header-column2 ul{
+            display: flex;
+            width: 60%;
+            background: rgba(255,255,255, 0.6);
+
+        }
+        .header-column3 {
+            display: flex;
+            flex-direction: row;
+            padding: 2rem;
+        }
+        .header-column3 button{
+            width: 30%;
+            height: 2.5rem;
+        }
+        .header-column2 ul{
+            display: flex;
+            flex-direction: row;
+        }
+        h1{
+            font-size: 2rem;
+        }
+        h2{
+             font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            width: 90%;
+        }
+        .main h2 {
+            padding: 2rem;
+        }
+        .main-section5 button {
+            margin: 2rem 0;
+            width: 50%;
+        }
+        .card-container{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        .production-cards {
+            display: grid;
+            grid-template-rows: 1fr 9.375rem;
+            width: 33%;
+            border: 1px solid rgb(69, 69, 228);
+            gap: 5rem;
+            margin: 2vh 2vw;
+        }
+        .production-cards img {
+            width: 90%;
+            height: 50vh;
+            object-fit: cover;
+        }
+        .production-cards button {
+            width: 80%;
+            height: 4rem;
+            text-transform: uppercase;
+        }
+        .footer-column1,.footer-column2,.footer-column3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            margin: 2rem 0;
+        }
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+        }
+        .social-links img {
+            width: 4rem;
+        }
+        .footer-column2 ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 65%;
+            list-style: none;
+            margin: 2rem 0;
+        }
+        .footer-column2 .accessibility {
+            width: 40%;
+        }
+        .footer-column2 ul img {
+            width: 2rem;
+        }
+        footer h2, footer p {
+            margin: 1.5rem 0
+        }
+        .footer-column3 {
+            width: 70%;
+        }
+        .logo {
+            width:20rem;
+            height:auto;
+        }
+        .watch-trailer{
+            text-transform: lowercase;
+        }
+    </style>
+    <header>
+        <div class="header header-column1">
+            <img class='logo' src="./assets/Logo White.png" alt="SproutStream Logo">
+            <h1>New this Week</h1>
+        </div>
+        <div class="header header-column2">
+            <!-- <img src="" class="recommend-weekly" alt="Weekly Recommendation"> -->
+            <h2>Animal Kingdom</h2>
+            <ul>
+                <li>catogory</li>
+                <li>comedy</li>
+                <li>suspense</li>
+                <li>city</li>
+                <li>holidays</li>
+            </ul>
+            <h3>Special limited air time</h3>
+            <p>A short description of the production.</p>
+        </div>
+        <div class="header header-column3">
+            <button class="stream-now">Start Streaming</button>
+            <button class="add-to-list">+ Watchlist</button>
+        </div>
+    </header>
+    <main>
+        <div class="main main-section1">
+            <h2>Most Popular</h2>
+            <div class="card-container">
+            <div class="production-cards">
+                <img src="https://lumiere-a.akamaihd.net/v1/images/p_up_19753_e6f911e3.jpeg?region=0%2C0%2C540%2C810" alt="Up_Poster">
+                <button class="watchlist">+ Watchlist</button>
+            </div>
+            <div class="production-cards">
+                <img src="https://play-lh.googleusercontent.com/w88E5dK4X9t6J0sFKnyCHVgBipE2PTNtJPiEucl0vDXIGSKc0WstiX0jmgiYhdbuLq0Y-vALY55WILFp" alt="Zootopia_poster">
+                <button class="watchlist">+ Watchlist</button>
+            </div>
+            <div class="production-cards">
+                <img src="https://lumiere-a.akamaihd.net/v1/images/p_bighero6_19753_20bd6206.jpeg" alt="Bighero6_poster">
+                <button class="watchlist">+ Watchlist</button>
+            </div>
+        </div>
+        </div>
+        <div class="main main-section2">
+            <h2>Coming Soon</h2>
+            <div class="card-container">
+            <div class="production-cards">
+                <img src="./assets/Roya1.webp" alt="Roya">
+                <button class="watch-trailer">Add to Watch Next</button>
+            </div>
+            <div class="production-cards">
+                <img src="./assets/Luca4.png" alt="Luca">
+                <button class="watch-trailer">Add to Watch Next</button>
+            </div>
+            <div class="production-cards">
+                <img src="./assets/pawpatrol.jpg" alt="Paw Patrol">
+                <button class="watch-trailer">Add to Watch Next</button>
+            </div>
+            </div>
+        </div>
+        <div class="main main-section3">
+            <h2>Just Added</h2>
+            <div class="card-container">
+            <div class="production-cards">
+                <img src="./assets/Slider/5.jpeg" alt="Lion">
+                <button class="watchlist">+Watchlist</button>
+            </div>
+            <div class="production-cards">
+                <img src="./assets/Beat_Bugs.jpeg" alt="Beat Bugs">
+                <button class="watchlist">+Watchlist</button>
+            </div>
+            <div class="production-cards">
+                <img src="./assets/peppapig.jpg" alt="Pegga Pig">
+                <button class="watchlist">+Watchlist</button>
+            </div>
+            </div>
+        </div>
+        <div class="main main-section4">
+            <h2>Top Picks for You</h2>
+            <div class="card-container">
+            <div class="production-cards">
+                <img src="./assets/spongebob.jpg" alt="Sponge Bob">
+                <button class="watchlist">+Watchlist</button>
+            </div>
+            <div class="production-cards">
+                <img src="./assets/fairlyoddparents.jpg" alt="Fairly Odd Parents">
+                <button class="watchlist">+Watchlist</button>
+            </div>
+            <div class="production-cards">
+                <img src="./assets/underpants show.jpg" alt="Captain Underpants">
+                <button class="watchlist">+Watchlist</button>
+            </div>
+            </div>
+        </div>
+        <div class="main main-section5">
+            <button class="view-all">Watch all TV shows and Movies</button>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-column1">
+            <h2>Follow Us</h2>
+            <div class="social-links">
+                <a href="" class="social-icons"><img src="/assets/facebook.svg" alt="SproutStream Facebook"></a>
+                <a href="" class="social-icons"><img src="/assets/instagram.svg" alt="SproutStream Instagram"></a>
+                <a href="" class="social-icons"><img src="/assets/youtube.svg" alt="SproutStream Youtube"></a>
+            </div>
+            <p>For more info, please visit our <a href="">Support Center</a></p>
+        </div>
+        <div class="footer-column2">
+            <ul class="affiliations">
+                <li><img src="/assets/google.svg" alt="google"></li>
+                <li><img src="/assets/paypal.svg" alt="paypal"></li>
+                <li><img src="/assets/apple.svg" alt="apple"></li>
+                <li><img src="/assets/windows.svg" alt="window"></li>
+                <li><img src="/assets/cc-visa.svg" alt="visa"></li>
+            </ul>
+            <ul class="accessibility">
+                <li><img src="/assets/hands-asl-interpreting-solid.svg" alt="hands-asl"></li>
+                <li><img src="/assets/closed-captioning-solid.svg" alt="Closed-Captioning"></li>
+                <li><img src="/assets/eye-low-vision-solid.svg" alt="eye-low-vision"></li>            </ul>
+        </div>
+        <div class="footer-column3">
+            <p>Disclaimer Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, earum vero optio nisi dignissimos possimus quod perspiciatis? Eaque, iusto facilis esse officia fuga quod obcaecati! Labore a nulla veniam qui!</p>
+            <p>This is an assignment for a BCIT project</p>
+            <p>If you do not want to receive future marketing email messages from SproutStream, please <a href="">opt-out</a></p>
+            <p>©2023 SproutStream</p>
+        </div>
+    </footer>
+</body>
+</html>

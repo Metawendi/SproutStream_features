@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Wendi Wang; A01345480">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap|Baloo+2:wght@400;600;800&display=swap|Poppins" rel="stylesheet">
+    <link rel="icon" href="/assets/Favicon Black.png" type="image/x-icon">
+    <title>Features</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap|Baloo+2:wght@400;600;800&display=swap|Poppins');
+        :root {
+            --yellow: #F4E400;
+            --orange: #F57330;
+            --green: #14BE93;
+            --pink: #ed51a5;
+            --lightblue:#08b7ed;
+            --purple: #d4bae8;
+            --darkblue: #00415A;
+        }
+        html{
+            font-size: 16px;
+            height: 100%;
+            width: 100%;
+        }
+        *{
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+        }
+        body{
+            display:flex;
+            flex-direction: column;
+            width: 100%;
+            flex-wrap: nowrap;
+            font-family: 'Poppins',sans-serif;
+            height: 100%;
+            background: radial-gradient(#d4bae8,#fff);
+        }
+        h2 {
+            font-family: 'Baloo 2', sans-serif;
+        }
+        header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+        .log-in-btn {
+            width: 18rem;
+            padding: 1rem;
+            margin-right: 4rem;
+            background: var(--pink);
+            border: none;
+            font-size: 1.2rem;
+            transition: .2s;
+            border-radius: 1rem;
+            border: 2px solid var(--green);
+        }
+        .log-in-btn:hover {
+            background: var(--green);
+            color: white;
+            border: 2px solid white;
+        }
+        .logo {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+            background: rgba(255,255,255,.8);
+            border: none;
+            width: 100%;
+        }
+        .logo, .tagline, .about, .swiper {
+            margin: 8vh auto !important;
+        }
+        main, footer{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-self: center;
+            align-items: center;
+        }
+        main {
+            margin-top: 5rem;
+        }
+        .about, .unique-features,.channels{
+            display:flex;
+            flex-direction: row;
+            width: 80%;
+            height: 30vh;
+            justify-content: center;
+            align-items: center; 
+            margin: 4rem auto;   
+            background: radial-gradient(#d4bae8,#fff);
+            border-radius: 1rem 1rem;
+            border: none;
+            overflow: hidden;
+        }
+        .about {
+            padding: 2rem;
+            position: relative;
+        }
+        .column1, .column2, .column3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+        .unique-features>div {
+            width: 20%;   
+        }
+        .feature1, .feature2, .feature3,.feature4, .feature5 {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-right: 1px solid black;
+            font-family: 'Baloo 2',sans-serif;
+            font-weight: 600;
+        }
+        .feature5 {
+            border-right: none;
+        }
+        .unique-features{
+            overflow-x:scroll;
+        }
+        .column1 p, .column2 p,.column3 p {
+            width: 50%;
+        }
+        .column1, .column2, .column3{
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: none;
+            margin: 2rem;
+            padding: 2rem 0;
+        }
+        .column3 {
+            background-image: url('/assets/Banner_3.jpeg');
+            background-position: 60%;
+        }
+        .column2 {
+            background-image: url('/assets/Banner_2.jpeg');
+            background-position: 50% !important;
+        }
+        .column1 {
+            background-image: url('/assets/Banner_4.jpeg');
+            background-position: 50%;
+        }
+        .column2 h3 {
+            margin-bottom: 2rem;
+        }
+        .unique-points{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 80vmax;
+            position: relative; 
+            border: none;
+            border-radius: 1rem 1rem;
+            overflow: hidden;
+        }
+        .unique-points img{
+            height: 40vmax;
+            width: 100%;
+            border-radius: 1rem 1rem;
+        }
+        .unique-points h2 {
+            display: flex;
+            justify-content: center;
+            font-family: 'Baloo 2', sans-serif;
+        }
+        .faq {
+            width: 90%;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            overflow: scroll;
+            background: radial-gradient(#d4bae8,#fff);
+            border: none;
+            border-radius: 1rem 1rem;
+        }
+        .small-logo{
+            width: 100%;
+            margin-left: 2rem;
+        }
+        .sitemap ul {
+            display: flex;
+        }
+        .logo img {
+            width:15rem;
+            height:auto;
+            margin-left: 4rem;
+        }
+        .signup {
+            display: grid;
+            grid-template-columns:30rem 10rem;
+            gap: 4rem;
+            width: 80%;
+            place-content: center;
+        }
+        .signup input{
+            margin: 2rem;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 .2rem var(--purple);
+            border-radius: 1rem;
+            border: 1px solid black;
+        }
+        .signup button {
+            margin: 2rem;
+            box-shadow: 0 .2rem .2rem var(--purple);
+            border-radius: 1rem;
+            border: 1px solid black;
+        }
+        .signup button:hover {
+            background: black;
+            color: white;
+        }
+        .affliations {
+            display: flex;
+            width: 80%;
+            height: 5vh;
+        }
+        .tagline {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            font-size: 2rem;
+            text-align: center;
+            border: none;
+        }
+        footer h2, footer p {
+            margin: 1.5rem 0;
+        }
+        .footer-column1,.footer-column2,.footer-column3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: calc(100%/3);
+        }
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+        }
+        .social-links img {
+            width: 2rem;
+        }
+        .footer-column2 ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 65%;
+            list-style: none;
+            margin: .8rem 0;
+        }
+        .footer-column2 .accessibility {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+        }
+        .affliations {
+            width: 100%;
+        }
+        .footer-column2 ul img {
+            width: 2rem;
+        }
+        footer h2, footer p {
+            margin: 1rem 0
+        }
+        footer {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+        .footer-column3 {
+            margin: 0 2rem;
+        }
+        button {
+            cursor: pointer;
+        }
+        .swiper {
+            margin: 0;
+            width: 80%;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: none;
+            position: relative;
+        }
+        .swiper-slide img {
+            width: 80%;
+            height: 100%;
+            object-fit: contain;
+            margin: 2rem;
+            border: none;
+            overflow: hidden;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: none; 
+            overflow: hidden;
+        }
+        .swiper-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: radial-gradient(#d4bae8,#fff);
+            border: none;
+            border-radius: 1rem 1rem;
+            overflow: hidden !important;
+        }
+        .slides-nav {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 4.5vh;
+            position: absolute;
+            bottom: 0;
+            background: rgba(255,255,255,1);
+            border: none;
+            z-index: 11;
+            border-radius: 0rem 0rem 1rem 1rem;
+        }
+        .slides-nav>div {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: lightgray;
+            margin: 1rem;
+            cursor: pointer;
+        }
+        h1 {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 3rem;
+            padding: 4rem 0;
+            text-shadow: 
+            0 1rem var(--purple),
+            0 1rem white;
+        }
+        .about h3 {
+            background: rgba(255,255,255,.8);
+            margin-bottom: 3rem;
+        }
+        .about p {
+            position: absolute;
+            bottom: 3rem;
+            width: 15%;
+        }
+        .float {
+            position: absolute;
+            top:25%;
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 3.5rem;
+            left: 30%;
+            text-shadow: 
+            0 .25rem var(--purple),
+            0 1rem white;
+        }
+        .accordion button{
+            cursor: pointer;
+            padding: 2rem;
+            width: 80%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 2.2em;
+            transition: 0.4s;
+            z-index: 9;
+            height: 10rem !important;
+        }
+        .accordion {
+            padding: .5rem;
+            width: 80%;
+            border: none;
+            border: .1rem solid var(--darkblue);
+            box-shadow: 
+            0 0 1rem var(--purple),
+            0 0 1rem var(--purple);
+            border-radius: 1rem 1rem;
+            margin: 2rem auto;
+        }
+        .active, .accordion:hover {
+        background-color: #ccc;
+        color: var(--blue); 
+        }
+        .panel {
+            margin: 0 auto;
+            padding: 1rem;
+            display: none;
+            background-color: var(--darkblue);
+            color: white;
+            width: 75%;
+            height: 10vh !important;
+            border-radius: 1rem 1rem;
+        }
+        .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+        font-size: 1.5em;
+        }
+        .navigation ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+        }
+        .navigation {
+            position: fixed;
+            top: 0%;
+            padding: 1rem;
+            background: var(--green);
+            z-index: 15;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #fff;
+            
+        }
+        .download-btn {
+            padding: .8rem;
+            font-size: 2rem;
+            border: none;
+            background: radial-gradient(#d4bae8,#fff);
+        }
+        .download-btn>a {
+            text-decoration: none;
+            color: var(--darkblue);
+        }
+        .dl-icon {
+            width: 2rem;
+            height: 2rem;
+        }
+        .channel1, .channel2, .channel3, .channel4 {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+        }
+        .channels ul{
+            width: 80%;
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items:start;
+            padding: 0;
+
+        }
+        .channels ul li {
+            padding: .2rem 0;
+        }
+        .channels img {
+            width: 10rem;
+            height: 10rem;
+        }
+        .channels {
+            padding: 5rem;
+            align-items: baseline;
+            height: auto;
+            position: relative;
+        }
+        h4 {
+            text-align: center;
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+        .download-now {
+            position: absolute;
+            bottom: 1rem;
+            padding: 1rem;
+            width: 20%;
+            border: .2rem solid var(--green);
+            border-radius: 1rem 1rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .download-now:hover {
+            background: var(--green);
+            color: white;
+        }
+        .statement {
+            width: 50%;
+            line-height: 2rem;
+            text-align: center;
+        }
+        .download-now a{
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <header> 
+        <div class="logo">
+            <img src="./assets/Logo_transparent.png" alt="Sprout Stream Logo">
+            <button class="log-in-btn">LOG IN</button>
+        </div>
+        <button class="download-btn"><a href="#download">Download Now <img src="/assets/download-solid.svg" class='dl-icon' alt="download icon"></a></button>
+        <div class="tagline">
+            <h1>Sprout Stream</h1>
+            <p id="myText"> Engage, Empower, Grow.</p>
+        </div>
+        <div class="signup">
+            <input type="text" name="Email" id="email" placeholder="Email">
+            <button>SIGN UP</button>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#swiper">Popular Shows</a></li>
+                <li><a href="#unique-points">Why SproutStream</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="about" id="about">
+            <div class="column1">
+                <h3>1,900+ movies</h3>
+                <p>Including award-winning blockbusters and exclusives</p>
+            </div>
+            <div class="column2">
+                <h3>38,000+ episodes</h3>
+                <p>Kids Friendly movies & series released each week</p>
+            </div>
+            <div class="column3">
+                <h3>New & exclusive</h3>
+                <p>Parent control for carefully designed AGE GROUPS</p>
+            </div>
+        </div>
+        <div class='swiper' id='swiper'>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"></div>
+            </div>
+            <div class="slides-nav">
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+            </div>
+          </div>
+        <div class="unique-points" id="unique-points">
+            <h2>Sprout Stream Specials</h2>
+            <img src="./assets/Banner_2.svg" alt="Features">
+            <p class="float">For Different Age Groups</p>
+            <div class="mission">
+                 <h4>Mission Statement</h4>
+                <p class="statement">At Sprout Stream, our mission is to provide fun, safe and educational content that children love and parents can trust. We are committed to providing age-appropriate content that not only entertains children, but inspires them, and gives them positive values.</p>
+            </div>
+            <div class="unique-features">
+                <div class="feature1">Preschool (Ages 2-4)</div>
+                <div class="feature2">Young Children (Ages 5-7)</div>
+                <div class="feature3">Older Children (Ages 8-11)</div>
+                <div class="feature4">Tweens (Ages 12-14)</div>
+                <div class="feature5">Teens (Ages 15-17)</div>
+            </div>
+        </div>
+        <div class="faq" id="faq">
+            <button class="accordion">Q1: What is Sprout Stream?</button>
+            <div class="panel">
+                <p>Sprout Stream is a media streaming platform designed specifically for children, offering a wide range of age-appropriate shows and educational content.</p>
+            </div>
+            <button class="accordion">Q2: How do I set age-appropriate content for my child?</button>
+            <div class="panel">
+                <p>You can set content restrictions in your account settings, ensuring your child only has access to shows suitable for their age group.</p>
+            </div>
+            <button class="accordion">Q3: Can multiple children use the same account?</button>
+            <div class="panel">
+                <p>Yes, you can create multiple profiles under one account, each with its own viewing preferences and age-appropriate content.</p>
+            </div>
+            <button class="accordion">Q4: Are there educational shows on Sprout Stream?</button>
+            <div class="panel">
+                <p>Yes, we have a variety of educational shows that are both fun and informative, catering to different age groups and learning stages.</p>
+            </div>
+            <button class="accordion">Q5: How can I monitor what my child is watching?</button>
+            <div class="panel">
+                <p>Our platform offers parental control features, allowing you to track viewing history and set viewing limits.</p>
+            </div>
+            <button class="accordion">Q6: Is Sprout Stream available on all devices?</button>
+            <div class="panel">
+                <p>Sprout Stream is accessible on various devices, including smartphones, tablets, smart TVs, and computers.</p>
+            </div>
+        </div>
+        <div class="channels" id="download">
+            <div class="channel1">
+                <img src="/assets/tv-solid.svg" alt="television">
+                <h4>TV</h4>
+                <ul>
+                    <li>Apple TV</li>
+                    <li>Android TV devices</li>
+                    <li>Samsung</li>
+                    <li>LG</li>
+                    <li>Amazon Fire TV</li>
+                </ul>
+            </div>
+            <div class="channel2">
+                <img src="/assets/desktop-solid.svg" alt="desktop">
+                <h4>Destop</h4>
+                <ul>
+                    <li>MacOS</li>
+                    <li>Chrome OS</li>
+                    <li>Windows PC</li>
+                </ul>
+            </div>
+            <div class="channel3">
+                <img src="/assets/mobile-solid.svg" alt="mobile">
+                <h4>Mobile & Tablets</h4>
+                <ul>
+                    <li>iPhone & iPad</li>
+                    <li>Android Phones & Tablets</li>
+                    <li>Amazon Fire Tablets</li>
+                </ul>
+            </div>
+            <div class="channel4">
+                <img src="/assets/gamepad-solid.svg" alt="game consoles">
+                <h4>Game Consoles</h4>
+                <ul>
+                    <li>iPhone & iPad</li>
+                    <li>Android Phones & Tablets</li>
+                    <li>Amazon Fire Tablets</li>
+                </ul>
+            </div>
+            <button class="download-now"><a href="./email.html"> Download Now</a></button>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-column1">
+            <h2>Follow Us</h2>
+            <div class="social-links">
+                <a href="" class="social-icons"><img src="/assets/facebook.svg" alt="SproutStream Facebook"></a>
+                <a href="" class="social-icons"><img src="/assets/instagram.svg" alt="SproutStream Instagram"></a>
+                <a href="" class="social-icons"><img src="/assets/youtube.svg" alt="SproutStream Youtube"></a>
+            </div>
+            <p>For more info, please visit our <a href="">Support Center</a></p>
+        </div>
+        <div class="footer-column2">
+            <ul class="affiliations">
+                <li><img src="/assets/google.svg" alt="google"></li>
+                <li><img src="/assets/paypal.svg" alt="paypal"></li>
+                <li><img src="/assets/apple.svg" alt="apple"></li>
+                <li><img src="/assets/windows.svg" alt="window"></li>
+                <li><img src="/assets/cc-visa.svg" alt="visa"></li>
+            </ul>
+            <img src="./assets/Logo_transparent.png" alt="Sprout Stream Logo" class="small-logo">
+            <ul class="accessibility">
+                <li><img src="/assets/hands-asl-interpreting-solid.svg" alt="hands-asl"></li>
+                <li><img src="/assets/closed-captioning-solid.svg" alt="Closed-Captioning"></li>
+                <li><img src="/assets/eye-low-vision-solid.svg" alt="eye-low-vision"></li>
+            </ul>
+        </div>
+        <div class="footer-column3">
+            <p>Disclaimer</p>
+            <p>This is an assignment for a BCIT project</p>
+            <p>If you do not want to receive future marketing email messages from SproutStream, please <a href="">opt-out</a></p>
+            <p>©2023 SproutStream</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script>
+        const big_image_root = [
+        '2.png',
+        '3.png',
+        '4.jpg',
+        '5.jpeg',
+        '6.jpeg',
+        '7.jpg',
+        '8.jpg',
+        '9.jpeg',
+        '10.png',
+        '11.jpeg',
+        '12.jpg',
+        '13.jpeg',
+        '1.png',
+        ];
+        let current_index = 0;  // Current index of the main image
+		let slides_interval;  // Interval for automatically changing slides
+		let playing = false;
+        const big_image = document.createElement('img');
+        const nav_icons = document.querySelectorAll(".nav-icon");  // Navigation icons
+        const imageAttributes = { 
+                width: 720, 
+                height: 480 
+                };  // Attributes for the main image
+        for (let key in imageAttributes) {
+        big_image.setAttribute(key, imageAttributes[key]);
+        }
+		document.querySelector('.swiper-slide').append(big_image);
+        const set_main_image = (image_index) => {
+			// TODO: set the main-image src image based on the passed parameter	    
+			big_image.src = `assets/slider/${big_image_root[image_index]}`;
+			// TODO: set the hidden textbox to the current index (if you take this approach)
+			// calls the function to update the big image for the slides as well as...	    
+			// updating the thumbnails based on the current index
+			current_index = image_index;
+            set_nav_buttons(image_index);
+		}
+        const first_load = () => {
+			// Calling 'set_main_image' with index 0 to display the first image as the main image
+			set_main_image(0);
+		}
+        const start_rotation = () => {
+            // This setInterval function is used to automatically rotate through the images
+			// // Every 2000 milliseconds (2 seconds), the set_next_image function is called
+            slides_interval = window.setInterval(set_next_image, 3000);
+			// Set the 'playing' variable to true, indicating that the image slideshow is currently playing
+			playing = true;
+            playing = true;
+
+        } 
+		// setting up navigation to the next image in the rotation
+		const set_next_image = () => {
+		// Using a ternary statement to check if the current index is the last in the array-reset to 0 (first image), otherwise go to the next index
+		const next_index = (current_index >= big_image_root.length - 1) ? 0 : current_index + 1;
+		set_main_image(next_index);
+		}
+        nav_icons.forEach( (icon, index) => {
+		// Add a mouseover event listener to each navigation icon
+		icon.addEventListener("click", () => {
+				// When the mouse hovers over a navigation icon, set the main image to the image corresponding to the index of the hovered icon
+				set_main_image(index); 
+			});
+		}); 
+		const set_nav_buttons = (index) => {          
+            // Using a ternary statement to set the icon to the image representing 'active' status if the loop index matches the current image index, otherwise set it to the image for 'inactive'
+            nav_icons.forEach((icon, loop_index) => {
+                icon.style.background = 
+                (loop_index == index) ? "black" : "lightgray";
+            });
+        };
+
+        // looping through the slider icons
+        nav_icons.forEach( (icon, index) => {
+		// adding an mouseover event to switch the big image using the slider icons
+        icon.addEventListener("click", () => {
+                set_main_image(index); 
+            });
+        });
+        window.addEventListener("load", first_load);
+        window.addEventListener("load", start_rotation);
+        //==============================================//
+        function splitText(selector) {
+        const element = document.querySelector(selector);
+        const text = element.innerText;
+        const splitText = text.split("").map((letter) => 
+            letter.trim() ? `<span>${letter}</span>` : "&nbsp;"
+        ).join("");
+        element.innerHTML = splitText;
+    }   
+// Split the text of the paragraph with the id of 'myText'
+        splitText("#myText");
+        gsap.from("#myText span", {
+    duration: 1,
+    opacity: 0,
+    y: 20,
+    ease: "elastic.out(1, 0.3)",
+    stagger: 0.05 // 0.05 seconds between start times of each letter animation
+});
+//==============================================//
+
+        var acc = document.getElementsByClassName("accordion");
+
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+
+                // Check if the panel is already open
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";  // Use 'block' instead of 'flex' for standard behavior
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
